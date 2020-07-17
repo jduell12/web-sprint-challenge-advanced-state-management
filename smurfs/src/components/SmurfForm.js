@@ -4,7 +4,7 @@ import React, {useContext} from 'react';
 import {FormContext} from '../contexts/FormContext'
 
 //styles
-// import {StyledForm} from '../styles/StyledComponents'
+import {StyledForm} from '../styles/StyledComponents'
 
 const SmurfForm = () => {
 
@@ -13,7 +13,7 @@ const SmurfForm = () => {
     return (
         <>
             <h2>Add A Smurf To The Village...</h2>
-            <form onSubmit={onSubmit}>
+            {/* <form onSubmit={onSubmit}>
             <label htmlFor="name"> 
                     Name: &nbsp;
                     <input id="name" name="name" type="text" placeholder="Enter the smurf name..." value={formValues.name} onChange={handleChange}/>
@@ -30,8 +30,8 @@ const SmurfForm = () => {
                 </label>
                 <br />
                 <button>Submit</button>
-            </form>
-                {/* <StyledForm onSubmit={onSubmit}>
+            </form> */}
+                <StyledForm onSubmit={onSubmit}>
                 <label htmlFor="name"> 
                     Name: &nbsp;
                     <input id="name" name="name" type="text" placeholder="Enter the smurf name..." value={formValues.name} onChange={handleChange}/>
@@ -48,7 +48,7 @@ const SmurfForm = () => {
                 </label>
                 <br />
                 <button>Submit</button>
-            </StyledForm> */}
+            </StyledForm>
         </>
     )
 }
