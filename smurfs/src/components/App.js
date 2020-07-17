@@ -32,9 +32,9 @@ const App = () => {
   const onSubmit = e => {
     e.preventDefault();
     axios
-      .post(`http://localhost:3333/smurfs/${formValues}`)
+      .post(`http://localhost:3333/smurfs/`, formValues)
       .then(res => {
-        console.log(res);
+        addSmurf(res.data);
       })
       .catch(err => {
         console.log(err);
