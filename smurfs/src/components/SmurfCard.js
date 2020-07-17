@@ -1,16 +1,19 @@
 import React from 'react';
 
+//styles
+import {StyledCard} from '../styles/StyledComponents'
+
 
 const SmurfCard = props => {
     const {smurf} = props;
     const {name, age, height} = smurf;
 
     return (
-        <div>
+        <StyledCard>
             <h3>Name: {name}</h3>
             <p>Age: {age}</p>
             <p>Height: {height}</p>
-        </div>
+        </StyledCard>
     )
 }
 

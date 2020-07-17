@@ -10,6 +10,7 @@ import SmurfList from './SmurfList';
 import SmurfForm from './SmurfForm';
 
 
+
 const App = () => {
 
   const initialFormValues = {
@@ -39,6 +40,9 @@ const App = () => {
       .catch(err => {
         console.log(err);
       })
+      .finally(
+        setValues(initialFormValues)
+      )
   }
 
   const [smurfList, addSmurf] = useState([]);
@@ -57,14 +61,12 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <h1>SMURFS! 2.0 W/ Redux</h1>
-      <div>Welcome to your state management version of Smurfs!</div>
+    <div >
       <SmurfContext.Provider value={{smurfList}}>
-        <SmurfList />
-        <FormContext.Provider value={{formValues, handleChange, onSubmit}}>
+      <FormContext.Provider value={{formValues, handleChange, onSubmit}}>
           <SmurfForm />
-        </FormContext.Provider>
+      </FormContext.Provider>
+        <SmurfList />
       </SmurfContext.Provider>
     </div>
   );

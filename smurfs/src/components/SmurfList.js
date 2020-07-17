@@ -6,17 +6,23 @@ import {SmurfContext} from '../contexts/SmurfContext';
 //components
 import SmurfCard from './SmurfCard';
 
+//styles
+import {StyledList} from '../styles/StyledComponents'
+
 const SmurfList = () => {
     const {smurfList} = useContext(SmurfContext);
 
     return (
         <div>
-           {smurfList.map(smurf => (
-                <SmurfCard 
-                    key={smurf.id}
-                    smurf = {smurf}
-                />
-           ))}
+            <h2>Villagers: </h2>
+           <StyledList>
+                {smurfList.map(smurf => (
+                        <SmurfCard 
+                            key={smurf.id}
+                            smurf = {smurf}
+                        />
+                ))}
+           </StyledList>
         </div>
     )
 }
