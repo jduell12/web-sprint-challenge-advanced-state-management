@@ -7,7 +7,7 @@ import {SmurfContext} from '../contexts/SmurfContext';
 import SmurfCard from './SmurfCard';
 
 //styles
-import {StyledList} from '../styles/StyledComponents'
+// import {StyledList} from '../styles/StyledComponents'
 
 const SmurfList = () => {
     const {smurfList} = useContext(SmurfContext);
@@ -15,14 +15,20 @@ const SmurfList = () => {
     return (
         <div>
             <h2>Villagers: </h2>
-           <StyledList>
+           {/* <StyledList>
                 {smurfList.map(smurf => (
                         <SmurfCard 
                             key={smurf.id}
                             smurf = {smurf}
                         />
                 ))}
-           </StyledList>
+           </StyledList> */}
+           {smurfList.map(smurf => (
+                        <SmurfCard 
+                            key={smurf.id}
+                            smurf = {smurf}
+                        />
+                ))}
         </div>
     )
 }

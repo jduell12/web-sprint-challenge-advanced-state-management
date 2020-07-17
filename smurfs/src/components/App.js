@@ -2,12 +2,12 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 
 //context
-import {SmurfContext} from '../contexts/SmurfContext';
-import {FormContext} from '../contexts/FormContext';
+import {SmurfContext} from '../contexts/SmurfContext.js';
+import {FormContext} from '../contexts/FormContext.js';
 
 //components 
-import SmurfList from './SmurfList';
-import SmurfForm from './SmurfForm';
+import SmurfList from './SmurfList.js';
+import SmurfForm from './SmurfForm.js';
 
 
 
@@ -21,7 +21,6 @@ const App = () => {
   }
 
   const [formValues, setValues] = useState(initialFormValues);
-  // const [formErrors, setErrors] = useState("");
 
   const handleChange = e => {
     setValues({
