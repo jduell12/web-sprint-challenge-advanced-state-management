@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+//context
+import {SmurfContext} from '../contexts/SmurfContext';
 
 //components
 import SmurfCard from './SmurfCard';
 
 const SmurfList = () => {
+    const {smurfList} = useContext(SmurfContext);
+
     return (
         <div>
-            <SmurfCard />
+           {smurfList.map(smurf => (
+                <SmurfCard 
+                    key={smurf.id}
+                    smurf = {smurf}
+                />
+           ))}
         </div>
     )
 }
